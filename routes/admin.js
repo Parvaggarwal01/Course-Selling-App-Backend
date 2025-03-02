@@ -7,7 +7,7 @@ adminRouter.post("/signup", (req, res) => {
     message: "Signup Endpoint",
   });
 });
- 
+
 adminRouter.post("/login", (req, res) => {
   res.json({
     message: "Login Endpoint",
@@ -26,7 +26,7 @@ adminRouter.put("/course", (req, res) => {
   })
 })
 
-adminRouter.get("/course", (req, res) => {
+adminRouter.get("/course/bulk", (req, res) => {
   res.json({
     message: "Course Endpoint",
   })
