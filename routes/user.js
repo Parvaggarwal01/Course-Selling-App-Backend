@@ -8,7 +8,6 @@ const { JWT_USER_PASSWORD } = require("../config");
 userRouter.post("/signup", async (req, res) => {
   const { email, password, firstName, lastName } = req.body;
   const hashedPassword = await bcrypt.hash(password, 5);
-  // console.log(hashedPassword);
 
   try {
     await userModel.create({
