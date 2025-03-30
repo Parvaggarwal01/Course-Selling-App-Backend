@@ -80,6 +80,8 @@ adminRouter.post("/course",adminMiddleware, async(req, res) => {
 })
 
 adminRouter.put("/course", (req, res) => {
+  
+
   res.json({
     message: "Course Endpoint",
   })
