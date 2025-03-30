@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const { userModel } = require("../db");
 const jwt = require("jsonwebtoken");
 const { JWT_USER_PASSWORD } = require("../config");
+const { userMiddleware } = require("../middleware/user");
 
 userRouter.post("/signup", async (req, res) => {
   const { email, password, firstName, lastName } = req.body;
@@ -61,7 +62,7 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-userRouter.get("/purchases", (req, res) => {
+userRouter.get("/purchases", userMiddleware, (req, res) => {
   res.json({
     message: "Purchases Endpoint",
   });
